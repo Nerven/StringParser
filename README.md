@@ -22,13 +22,13 @@ var builder = new StringParserBuilder
             },
         PostSteps =
             {
-                ConvertibleParseStep.Default, // Parses most .NET primitives and other 
+                ConvertibleParseStep.Default, // Parses most .NET primitives and other types implementing IConvertible
             },
     };
 
 var stringParser = builder.Build();
 
 stringParser.Parse<bool?>("True"); // -> true
-stringParser.Parse<UriKind>("RelativeOrAbsolute")); // -> UriKind.RelativeOrAbsolute
+stringParser.Parse<UriKind>("RelativeOrAbsolute"); // -> UriKind.RelativeOrAbsolute
 stringParser.Parse<ushort?>("0"); // -> 1
 ````
